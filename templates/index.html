@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Instagram Reel or YouTube Video</title>
+    <style>
+        /* Resetting some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2d3748, #4a5568); /* Dark gradient */
+            color: #e2e8f0; /* Light text for dark mode */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Heading Styles */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #e2e8f0; /* Light color for heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Form Container */
+        form {
+            background-color: rgba(44, 49, 58, 0.9); /* Semi-transparent dark form */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 420px;
+            margin-top: 20px;
+        }
+
+        /* Label Styling */
+        label {
+            display: block;
+            font-size: 1rem;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Input and Select Fields */
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #2d3748; /* Dark border */
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+            background-color: #4a5568; /* Dark background for inputs */
+            color: #e2e8f0; /* Light text color inside input */
+        }
+
+        /* Focus Effect on Input Fields */
+        input[type="text"]:focus, select:focus {
+            border-color: #63b3ed;  /* Light blue focus effect */
+            box-shadow: 0 0 8px rgba(99, 179, 237, 0.6);
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #2b6cb0; /* Dark blue button */
+            color: white;
+            padding: 14px 24px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        /* Button Hover and Active Effects */
+        button:hover {
+            background-color: #2b3e58; /* Darker blue on hover */
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+
+        /* Additional styling for success/error message */
+        .error-message, .success-message {
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .success-message {
+            color: #4caf50;  /* Green for success */
+        }
+
+        .error-message {
+            color: #f56565;  /* Red for error */
+        }
+    </style>
+</head>
+<body>
+    <h1>Download Instagram Reel or YouTube Video</h1>
+    <form method="POST">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url" required><br><br>
+
+        <label for="platform">Choose Platform:</label>
+        <select id="platform" name="platform" required>
+            <option value="instagram">Instagram</option>
+            <option value="youtube">YouTube</option>
+        </select><br><br>
+
+        <button type="submit">Download</button>
+    </form>
+
+    <!-- Display messages here -->
+    <div class="success-message" id="successMessage"></div>
+    <div class="error-message" id="errorMessage"></div>
+</body>
+</html>
